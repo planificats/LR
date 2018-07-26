@@ -1,0 +1,47 @@
+s = {
+	id = "03C421C8-738F-4927-A741-A2156D1359D6",
+	internalName = "WF9: Recheck exposure",
+	title = "WF09: Recheck exposure",
+	type = "LibraryFilter",
+	value = {
+		columnBrowserActive = false,
+		columnBrowserDesc = {
+			{
+				criteria = "keyword",
+			},
+			{
+				criteria = "keyword",
+			},
+			{
+				criteria = "flashFired",
+			},
+			{
+				criteria = "label",
+			},
+		},
+		customLabel = false,
+		filtersActive = true,
+		gpsLocation = false,
+		gpsLocationNELatitude = 83.068848955463,
+		gpsLocationNELongitude = 180,
+		gpsLocationSWLatitude = -63.859762740392,
+		gpsLocationSWLongitude = -180,
+		label1 = false,
+		label2 = true,
+		label3 = false,
+		label4 = false,
+		label5 = false,
+		labelOp = "any",
+		minRating = 2,
+		noLabel = false,
+		pick = "unrejected",
+		ratingOp = "==",
+		searchOp = "all",
+		searchString = "",
+		searchStringActive = false,
+		searchTarget = "all",
+		usage = "<nil>",
+		whichCopies = "<nil>",
+	},
+	version = 0,
+}

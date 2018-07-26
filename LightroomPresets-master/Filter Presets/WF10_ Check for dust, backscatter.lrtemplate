@@ -1,0 +1,47 @@
+s = {
+	id = "06C352C2-47BF-4862-942F-2B5D1AC1969E",
+	internalName = "WF10: Check for dust, backscatter",
+	title = "WF10: Check for dust, backscatter",
+	type = "LibraryFilter",
+	value = {
+		columnBrowserActive = false,
+		columnBrowserDesc = {
+			{
+				criteria = "keyword",
+			},
+			{
+				criteria = "keyword",
+			},
+			{
+				criteria = "flashFired",
+			},
+			{
+				criteria = "label",
+			},
+		},
+		customLabel = false,
+		filtersActive = true,
+		gpsLocation = false,
+		gpsLocationNELatitude = 83.068848955463,
+		gpsLocationNELongitude = 180,
+		gpsLocationSWLatitude = -63.859762740392,
+		gpsLocationSWLongitude = -180,
+		label1 = false,
+		label2 = true,
+		label3 = false,
+		label4 = false,
+		label5 = false,
+		labelOp = "any",
+		minRating = 3,
+		noLabel = false,
+		pick = "unrejected",
+		ratingOp = "==",
+		searchOp = "all",
+		searchString = "",
+		searchStringActive = false,
+		searchTarget = "all",
+		usage = "<nil>",
+		whichCopies = "<nil>",
+	},
+	version = 0,
+}

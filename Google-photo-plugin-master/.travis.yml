@@ -1,0 +1,30 @@
+language: c
+sudo: false
+env:
+  global:
+  - LUAROCKS=2.3.0
+  - LUA=lua5.1
+  - secure: tyZgbf/vgEJd4ciJvClzqTrjSOsu4trNNhrwHR6pk4t84y8Ho+va+yqPYlAD5i6MUEWmHf9udyppY3m8BVGxMjYnykfKUel8Z0FydVUxBXQJbEizAb5GVHzj3qyjtWRexLvz08gOaRUdclyyJ1OODdHewRPd7ykxN0Gnb6vFRH4a6D+jpTesyl29/necYQqZ7aYgrvKKNlA4PULVeS+6KEg4/d6dEghYXB/RPMtQcmtezzUCM7opS9TX7GkhbV6fbX2vSqalBSuphMjMYEj8YZHvpMOKaxrVhCscMyT2gCwntQg0EpQe0lqaSVOoJYFMTkiLWi6XQJWQLI88JcPY4hqP6+hnbtPP2ODb1CaILtXSRu+44DqYRsDJ7lbNiCPyQUvmpHH1utRlwAHU9yGCKSS508mDGt7x9PL59MeR74mtOAMZwgXroKNSIfY2rYDj7XdggimHi9fX/G8D46zRsp0CW6wM9GJYhsagBkJnLX6VB4BHlQFCnbI/kB2m4CLloriv3bGszDEVmfkxmzNUkAjKwkwUL8QvDcFbv0v5/InqkXrIJBG+T2irOfagd8KYZBK79wTRS/tHKgN+nto7YORR7r+nQ/2OS9MSP1SyI5bdvnU/At/4cgrggepBIHr92erS+XjyNsYc3bdHQOAJpwrCLqHxecN7+Cs93cRnKG4=
+branches:
+  only:
+  - master
+before_install:
+- source .travis/setenv_lua.sh
+script:
+- cd google-photo.lrplugin
+- sed -i.bak "s/CONSUMER_KEY = \"\"/CONSUMER_KEY = \""$CONSUMER_KEY"\"/" GPhotoAPI.lua
+- sed -i.bak "s/CONSUMER_SECRET = \"\"/CONSUMER_SECRET = \""$CONSUMER_SECRET"\"/" GPhotoAPI.lua
+- for i in *.lua; do luac -o $i $i; done
+- cd ..
+- zip -r /tmp/lightroom-google-photo-plugin.zip google-photo.lrplugin
+deploy:
+  provider: releases
+  api_key:
+    secure: jVaJcq0IU78RPUsDbpn/AQmbQ2ScoKVwiaoGxJxC03MXU1tKzb682l0c4i+8pNtAJzWdCmxTJ980Fg2qrSzUvD5hVtwADyX1OeC/Vb81FsCCrubmKOQMQQGyOk3JMxQ7vcow+1u8HU5wdq/uTgI72yO7hP71WbqvT82kMMes6nPcwK0+YJyw/C4cINt6s6134PbHr41lgf/L6i2DQ4yMkxesMffRaq+9HN2nAQyrEifs2aA4sNRR4cL0uNsKWblOtTCqL21KbZa1eaRGZUza2rDHfmyxfwaqsJGPhFv1K0z9o0pVThRug5W+u12DyGYkFnx7gc+yDet0kPPJBAD6R3TyMTCX4TBZlzrnlzmwJpRc8U/c0lW+G/AbYQ6saUxIz63CygC8yi24JOeexZZRS30X+qYYl8dGnCQiYEh+qJ0bUlaLlUj1COqDZayyDI3e0VwteIp8cekS7TfeuDaYTXTK9syoYckyn4sw8eUBwkdF/+NRJH+tJarFi2Ja++6Rx96Pz79WeHjvw/0/GwYcLctM8FGr7dHxTxHdilrCtuCxvxV+vYOYeOQDhvrY0e/e5Dzn/5MnqQVWlTfjCE0NAsMbuB3dnq3zqqz0zC1Q9frW/1J2gFHAJjeIIYHtfju2GmFgR4iJyDCH7ef5uukTG2PirYFaUTXn0LkYJMxlXyU=
+  file: /tmp/lightroom-google-photo-plugin.zip
+  on:
+    repo: stanaka/lightroom-google-photo-plugin
+notifications:
+  email:
+    on_success: change
+    on_failure: always

@@ -1,0 +1,50 @@
+s = {
+	id = "AA3F9B24-337A-4DF5-A60B-2709C90BD554",
+	internalName = "Camera Info",
+	title = "Camera Info",
+	type = "LibraryFilter",
+	value = {
+		columnBrowserActive = true,
+		columnBrowserDesc = {
+			{
+				criteria = "camera",
+			},
+			{
+				criteria = "lens",
+			},
+			{
+				criteria = "focalLength",
+			},
+			{
+				criteria = "flashFired",
+			},
+			{
+				criteria = "isoSpeed",
+			},
+		},
+		customLabel = false,
+		filtersActive = false,
+		gpsLocation = false,
+		gpsLocationNELatitude = 45.783102029466,
+		gpsLocationNELongitude = 4.8659146332741,
+		gpsLocationSWLatitude = 45.782231300468,
+		gpsLocationSWLongitude = 4.8640853667259,
+		label1 = false,
+		label2 = false,
+		label3 = false,
+		label4 = false,
+		label5 = false,
+		labelOp = "any",
+		minRating = 1,
+		noLabel = false,
+		pick = "<nil>",
+		ratingOp = ">=",
+		searchOp = "all",
+		searchString = "",
+		searchStringActive = false,
+		searchTarget = "all",
+		usage = "<nil>",
+		whichCopies = "<nil>",
+	},
+	version = 0,
+}
